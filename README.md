@@ -17,8 +17,8 @@ PAC-MAN. Bundled Turnip is the default. L3 + R3 toggles the internal settings
 menu; its Graphics driver row offers system-driver selection and importing an
 ARM64 driver ZIP, applied on the next launch.
 
-Linux title and introductory gameplay run at 60 FPS. Android device validation
-is in progress. Shared configuration
+Linux title and introductory gameplay run at 60 FPS. Retroid title rendering
+runs around 59–60 FPS with speculative draw preparation disabled. Shared configuration
 names remain `TEMPEST_*`. Akka Arrh's native frame/aspect hooks do not patch any
 addresses copied from another game.
 

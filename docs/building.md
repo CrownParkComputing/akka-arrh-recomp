@@ -91,6 +91,9 @@ Caches default to `~/.cache/akka-arrh/` and `out/shaders/`.
 
 The shared environment names remain `TEMPEST_*`. Akka uses its own frame clock
 and aspect ratio; the fixed addresses from earlier games are disabled.
+Both draw pipelining and speculative draw preparation default to off on Linux
+and Android to keep dynamic text/geometry stable. Explicit `TEMPEST_DRAW_PIPE`
+and `TEMPEST_PREP_WORKERS` overrides are available for diagnostics.
 L3 + R3 opens Settings; F10 and holding Select for two seconds also work.
 
 ## Android

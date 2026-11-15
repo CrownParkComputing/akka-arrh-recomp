@@ -112,7 +112,8 @@ available. Changes apply after closing and reopening the game. See
 ## Defaults and checks
 
 The initial profile uses the game's 1080p mode with 1280×720 host output,
-FEX MaxInst500, serial draw recording, single-sampled host images and shader compilation on demand.
+FEX MaxInst500, serial draw recording and draw preparation on the GPU thread.
+Host images use one sample, and shaders compile on demand.
 Explicit `launch.ini` values override defaults. Normal play has no timeout.
 
 ```bash

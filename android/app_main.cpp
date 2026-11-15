@@ -78,6 +78,10 @@ extern "C" SDL_DECLSPEC int SDL_main(int, char **) {
         launch_settings(directory);
         std::filesystem::create_directories(directory+"/user");
         setenv("TEMPEST_FEX_MAX_INST","500",0);
+        // Speculative draw preparation causes jumping text and stretched
+        // geometry in Akka; a controlled Retroid comparison clears it with
+        // these workers disabled. Resolve resources on the GPU thread.
+        setenv("TEMPEST_PREP_WORKERS","0",0);
         setenv("TEMPEST_SKIP_INTRO","1",0);
         setenv("TEMPEST_RENDER_RESOLUTION","1080p",0);
         // Restored Android pipelines can produce black frames; compile on demand for now.

@@ -51,9 +51,10 @@ u32 DefaultWorkerCount() {
     if (const char* env = std::getenv("TEMPEST_PREP_WORKERS")) {
         return static_cast<u32>(std::clamp(std::atoi(env), 0, 16));
     }
-    // Workers are SCHED_IDLE and claim whole buffers, so more of them only use more idle
-    // cores: half the hardware threads (Steam Deck 4, 16-thread desktop 8).
-    return std::clamp<u32>(TempestThreads::Available() / 2, 1, 8);
+    // Akka's speculative resource preparation produces jumping text and stretched
+    // geometry on Retroid. Use the same safe default on Linux; an explicit worker
+    // count above remains available for diagnostics.
+    return 0;
 }
 
 /// Flattened user data of one submission: chunks never move, so the GPU thread can read a
