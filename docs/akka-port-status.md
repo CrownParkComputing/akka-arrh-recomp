@@ -96,3 +96,10 @@ Linux parity check after this change: a fresh native build launches with
 workers. Its test log is `out/linux-flicker-parity/boot.log`. Initial frames run
 at 60 FPS, followed by one-second presentation stalls in this desktop session;
 this run does not establish sustained performance for the updated Linux build.
+
+A subsequent unchanged Linux launch (`out/linux-flicker-focused/boot.log`) holds
+60 FPS through repeated five-second windows with no override variables. This
+confirms the common zero-worker default runs at normal title speed; the prior
+one-second stalls were not reproduced in this run. No additional renderer change
+was made between these checks. Android v0.2's introductory-level screenshot also
+has legible HUD text and normal geometry (`out/android-flicker/v02-intro.png`).
