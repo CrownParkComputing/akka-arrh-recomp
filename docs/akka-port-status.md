@@ -48,8 +48,10 @@ System and Import driver ZIP. The importer validates metadata, ARM64 ELF and
 Android API, stores immutable hash-named libraries and applies changes at the
 next launch. The launcher shortcut provides recovery independently of rendering.
 
-Android device rendering, sustained gameplay/audio and physical menu checks
-remain pending. The user's current Retroid game is left running until a test
+The signed APK and all 96 game files are installed on the Retroid. Installed
+APK SHA-256 matches the host build; the bundled driver hash is verified.
+The existing foreground game remained unchanged. Android device rendering,
+sustained gameplay/audio and physical menu checks remain pending. The user's current Retroid game is left running until a test
 is authorized. Linux 60FPS does not establish Retroid performance.
 
 ## Checks
@@ -62,3 +64,7 @@ signature. Game files, driver ZIPs and signing keys are excluded from Git.
 Private retained evidence lives under `out/`: package/artifact inventories,
 audio-audit, kernel-contract, linux-boot-4, linux-play-check and linux-title-serial.
 Historical docs in legacy describe other games and do not establish Akka status.
+
+Installed APK SHA-256: `997e59874e8951e2dfc226c8913fa2228a459801a5a917a914f9a1f39b257bbf`.
+The native menu callback is defined in libmain and the Java activity exposes its
+matching JNI entry. The ARM64 SRT check links successfully.
